@@ -24,6 +24,7 @@ usnavy = list(SITE = c(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
 
 corrplot::corrplot(cor(usnavy), method = 'ellipse', order = 'AOE', type = 'upper',addCoef.col ='black', number.cex = 0.8)
 
+acp_usnavy = princomp(usnavy, cor = T)
 > summary(acp_usnavy)
 Importance of components:
                           Comp.1     Comp.2     Comp.3     Comp.4     Comp.5     Comp.6      Comp.7      Comp.8       Comp.9
