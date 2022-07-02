@@ -52,3 +52,8 @@ Cumulative Var  0.111  0.222  0.333  0.444  0.556  0.667  0.778  0.889  1.000
 ggpubr::ggdensity(acp_usnavy$scores[,1], main = "Density plot of Comp.1", xlab = "Comp.1")
 ggpubr::ggqqplot(acp_usnavy$scores[,1])   
 stats::shapiro.test(acp_usnavy$scores[,1])
+
+	Shapiro-Wilk normality test
+
+data:  acp_usnavy$scores[, 1]
+W = 0.93692, p-value = 0.1256
