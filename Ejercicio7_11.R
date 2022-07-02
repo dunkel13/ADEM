@@ -38,3 +38,16 @@ Importance of components:
 Standard deviation     1.7155596 0.6910775 0.60053308 0.46757572
 Proportion of Variance 0.7357862 0.1193970 0.09015999 0.05465676
 Cumulative Proportion  0.7357862 0.8551832 0.94534324 1.00000000
+> acp_t7_14$loadings
+
+Loadings:
+    Comp.1 Comp.2 Comp.3 Comp.4
+SAB  0.515  0.475  0.107  0.706
+ACE  0.466 -0.851  0.103  0.218
+H2S  0.515  0.200  0.580 -0.598
+LAC  0.502        -0.801 -0.311
+
+               Comp.1 Comp.2 Comp.3 Comp.4
+SS loadings      1.00   1.00   1.00   1.00
+Proportion Var   0.25   0.25   0.25   0.25
+Cumulative Var   0.25   0.50   0.75   1.00
