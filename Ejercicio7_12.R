@@ -48,3 +48,7 @@ MMH   0.374 -0.204        -0.251 -0.162 -0.208         0.783 -0.257
 SS loadings     1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000  1.000
 Proportion Var  0.111  0.111  0.111  0.111  0.111  0.111  0.111  0.111  0.111
 Cumulative Var  0.111  0.222  0.333  0.444  0.556  0.667  0.778  0.889  1.000
+
+ggpubr::ggdensity(acp_usnavy$scores[,1], main = "Density plot of Comp.1", xlab = "Comp.1")
+ggpubr::ggqqplot(acp_usnavy$scores[,1])   
+stats::shapiro.test(acp_usnavy$scores[,1])
