@@ -27,10 +27,14 @@ corrplot::corrplot(cor(usnavy), method = 'ellipse', order = 'AOE', type = 'upper
 acp_usnavy = princomp(usnavy, cor = T)
 > summary(acp_usnavy)
 Importance of components:
-                          Comp.1     Comp.2     Comp.3     Comp.4     Comp.5     Comp.6      Comp.7      Comp.8       Comp.9
-Standard deviation     2.5137354 0.87790933 0.86238811 0.69384594 0.58863442 0.43457650 0.292922553 0.245634368 0.0615385268
-Proportion of Variance 0.7020962 0.08563609 0.08263481 0.05349135 0.03849894 0.02098408 0.009533736 0.006704027 0.0004207767
-Cumulative Proportion  0.7020962 0.78773228 0.87036708 0.92385844 0.96235738 0.98334146 0.992875196 0.999579223 1.0000000000
+                          Comp.1     Comp.2     Comp.3     Comp.4     Comp.5     Comp.6
+Standard deviation     2.5137354 0.87790933 0.86238811 0.69384594 0.58863442 0.43457650
+Proportion of Variance 0.7020962 0.08563609 0.08263481 0.05349135 0.03849894 0.02098408
+Cumulative Proportion  0.7020962 0.78773228 0.87036708 0.92385844 0.96235738 0.98334146
+                            Comp.7      Comp.8       Comp.9
+Standard deviation     0.292922553 0.245634368 0.0615385268
+Proportion of Variance 0.009533736 0.006704027 0.0004207767
+Cumulative Proportion  0.992875196 0.999579223 1.0000000000
 > acp_usnavy$loadings
 
 Loadings:
