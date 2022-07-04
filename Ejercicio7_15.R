@@ -13,6 +13,17 @@ Importance of components:
 Standard deviation     1.2946628 0.5690766
 Proportion of Variance 0.8380759 0.1619241
 Cumulative Proportion  0.8380759 1.0000000
+> acp_T7_15$loadings
+
+Loadings:
+          Comp.1 Comp.2
+Ventas     0.707  0.707
+Ganancias  0.707 -0.707
+
+               Comp.1 Comp.2
+SS loadings       1.0    1.0
+Proportion Var    0.5    0.5
+Cumulative Var    0.5    1.0
 > acp_T7_15$sdev^2
    Comp.1    Comp.2 
 1.6761519 0.3238481 
