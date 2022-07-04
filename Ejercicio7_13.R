@@ -37,3 +37,12 @@ Cumulative Var    0.1    0.2    0.3    0.4    0.5    0.6    0.7    0.8    0.9
 SS loadings        1.0
 Proportion Var     0.1
 Cumulative Var     1.0
+
+ggpubr::ggdensity(acp_acuicultura$scores[,1], main = "Density plot of Comp.1", xlab = "Comp.1")
+ggpubr::ggqqplot(acp_acuicultura$scores[,1])   
+> stats::shapiro.test(acp_acuicultura$scores[,1])
+
+	Shapiro-Wilk normality test
+
+data:  acp_acuicultura$scores[, 1]
+W = 0.91071, p-value = 4.748e-08
