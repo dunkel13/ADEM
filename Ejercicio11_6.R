@@ -1,3 +1,4 @@
+# Ejercicio 8 - punto 6 ----
 acp_pizza = princomp(sample_pizza, cor = T)
 > summary(acp_pizza)
 Importance of components:
@@ -25,3 +26,32 @@ CAL     0.299 -0.534         0.313 -0.101  0.716
 SS loadings     1.000  1.000  1.000  1.000  1.000  1.000  1.000
 Proportion Var  0.143  0.143  0.143  0.143  0.143  0.143  0.143
 Cumulative Var  0.143  0.286  0.429  0.571  0.714  0.857  1.000
+
+biplot(acp_pizza)
+sample_pizza2 = bind_cols(sample_pizza, "clust" = c(rep("pc_g1", 8), rep("pc_g2", 18), rep("pc_g3", 25), rep("pd_g4", 11)))
+sample_pizza2 = bind_cols(sample_pizza2, "pfx" = acp_pizza$scores[,1])
+sample_pizza2 = bind_cols(sample_pizza2, "pfy" = acp_pizza$scores[,2])
+
+km_pizza = kmeans(sample_pizza, centers = 4)
+km_pizza$cluster
+sample_pizza2 = bind_cols(sample_pizza2, "k_means" = km_pizza$cluster)
+
+
+library(factoextra)
+fviz_nbclust(x = sample_pizza, FUNcluster = kmeans, method = "wss", k.max = 15, 
+             diss = get_dist(sample_pizza, method = "euclidean"), nstart = 50)
+
+library(ggplot2)
+p1 <- ggplot(data = sample_pizza2, aes(x = pfx, y = pfy, color = as.factor(clust))) +
+        geom_point(size = 3) +
+        labs(title = "Agrupamiento usando 1er plano factorial del acp") +
+        theme_bw() +
+        theme(legend.position = "none")
+
+p2 <- ggplot(data = sample_pizza2, aes(x = pfx, y = pfy, color = as.factor(k_means))) +
+        geom_point(size = 3) +
+        labs(title = "Agrupación mediante K-means") +
+        theme_bw() +
+        theme(legend.position = "none")
+
+ggpubr::ggarrange(p1, p2)
